@@ -1,7 +1,10 @@
-@debugger
+@layout('base')
+
+@section('content')
 <h1>Hello World</h1>
 <ul>
   @each(s in sightings)
     <li> {{ s.datetime }} at ({{s.lat}}, {{s.lng}}) </li>
   @endeach
 </ul>
+@endsection

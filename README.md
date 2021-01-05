@@ -134,7 +134,23 @@ it will save the new sighting information to the database
 ## Task 10: Display listings
 * Make sure to read this first: https://adonisjs.com/docs/4.1/lucid#_static_methods
 * Make sure to read this first: https://edge.adonisjs.com/docs/iteration
+* Make sure to read this first: https://forum.adonisjs.com/t/correctly-passing-collection-of-models-to-edge/131
 
 1. Change `SightingController.index` to fetch all the sighting records
 2. Pass all the recording sightings to the view `sightings-index`
 3. Use iteration to display all the records in a table form
+
+# Task 11: Update listing
+* Make sure to read: https://adonisjs.com/docs/4.1/lucid#_static_methods
+
+1. Add `SightingController.update` to the SightingController, and also a route 
+associated with it. The url should be `/sightings/:sighting_id/update`, where the
+parameter `sighting_id` refers to the id of the sightings that we want to edit
+2. Display the form with the current details of the sighting. Make sure to detail_id
+with the CSRF
+3. Make it such that when the user submit the form, the sighting will be updated. Follow
+the steps below:
+   * Create a new function in the `SightingController` named `processUpdate`
+   * Create a route to to the new function. Make sure to include the `sighting_id`
+   * Update the sighting with the new information (https://adonisjs.com/docs/4.1/lucid#_inserts_updates)
+   * Redirect the user back to the `/sightings/` url (see: https://adonisjs.com/docs/4.1/response#_redirects)

@@ -1,0 +1,16 @@
+<form method="POST">
+{{csrfField()}}
+<div>
+  <label>Date:
+  <input type="date" name="date" value="{{sighting.datetime}}"/>
+</div>
+<div>
+  <label>Lat:
+  <input type="text" name="lat" value="{{sighting.lat}}"/>
+</div>
+<div>
+  <label>Lng:
+  <input type="text" name="lng" value="{{sighting.lng}}"/>
+</div>
+<input type="submit"/>
+</form>

@@ -1,16 +1,23 @@
 <form method="POST">
 {{csrfField()}}
 <div>
-  <label>Date:
+  <label>Date:</label>
   <input type="date" name="date"/>
 </div>
 <div>
-  <label>Lat:
+  <label>Lat:</label>
   <input type="text" name="lat"/>
 </div>
 <div>
-  <label>Lng:
+  <label>Lng:</label>
   <input type="text" name="lng"/>
 </div>
+<label>Countries</label>
+<select name="country_id">
+  @each(c in countries)
+   <option value="{{c.id}}">{{c.name}}</option>
+  @endeach
+</select>
+
 <input type="submit"/>
 </form>

@@ -28,3 +28,20 @@ Route.get('/sightings/', 'SightingController.index');
 Route.get('/sightings/about', 'SightingController.about');
 Route.get('/sightings/create', 'SightingController.create');
 Route.post('/sightings/create', 'SightingController.processCreate')
+Route.get('/sightings/:sighting_id/update', 'SightingController.update')
+Route.post('/sightings/:sighting_id/update', 'SightingController.processUpdate')
+
+Route.get('register', 'UserController.register');
+
+Route.post('register', 'UserController.processRegister');
+
+Route.get('login', 'UserController.login')
+   .middleware('guest')
+
+Route
+  .post('login', 'UserController.processLogin')
+  .middleware('guest')
+
+Route
+  .get('users/:id', 'UserController.show')
+  .middleware('auth')

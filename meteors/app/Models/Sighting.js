@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class Sighting extends Model {
+   country () {
+    return this.belongsTo('App/Models/Country')
+  }
 }
 
 module.exports = Sighting
